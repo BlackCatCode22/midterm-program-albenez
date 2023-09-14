@@ -3,28 +3,29 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        Student myStudent = new Student();
-        myStudent.firstName = "jim";
-        myStudent.lastName = "Halpert";
-        myStudent.gpa = 3.0;
+    System.out.println(Cat.getCatCount());
 
-        Student myStudent2 = new Student();
-        myStudent2.firstName = "tim";
-        myStudent2.lastName = "smith";
-        myStudent2.gpa = 2.6;
+        Cat myCat = new Cat();
+       // myCat.name = "Felix";
+        myCat.age = 8;
+        myCat.catSound ="GGGRRR";
 
-        ArrayList<Student> studentList = new ArrayList<>();
+        Cat myCat2 = new Cat();
+        //myCat2.name = "Wes";
+        myCat2.age = 1;
 
-        studentList.add(myStudent);
-        studentList.add(myStudent2);
+        Cat myCat3 = new Cat();
+        //myCat3.name = "den";
+        myCat3.age = 5;
 
-        for (Student student : studentList) {
-            System.out.println("Students name is: " + student.firstName);
+System.out.println(Cat.getCatCount());
+
+        ArrayList<Cat> catList = new ArrayList<>();
+
+        for (int i = 1; i <= 5; i++){
+            Cat cat  = new Cat("Cat" + i+1);
+            catList.add(cat);
         }
-
-
-
-
 
 
     }
