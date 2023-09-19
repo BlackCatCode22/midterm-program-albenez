@@ -1,31 +1,90 @@
+
+// AB 9/19/23
+//main.java
+// Driver class for zoo warmup
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 public class Main {
+
+    String genUniqueID(String theSpecies){
+        if (theSpecies )
+    }
+
     public static void main(String[] args) {
-    System.out.println(Cat.getCatCount());
 
-        Cat myCat = new Cat();
-       // myCat.name = "Felix";
-        myCat.age = 8;
-        myCat.catSound ="GGGRRR";
+        System.out.println("Hello world!");
 
-        Cat myCat2 = new Cat();
-        //myCat2.name = "Wes";
-        myCat2.age = 1;
+        // create an animal object
+        animals myNewAnimal = new animals();
 
-        Cat myCat3 = new Cat();
-        //myCat3.name = "den";
-        myCat3.age = 5;
+        myNewAnimal.desc = " this is my description";
 
-System.out.println(Cat.getCatCount());
+        System.out.println("\n the desc of the new animal is: " + myNewAnimal.desc);
 
-        ArrayList<Cat> catList = new ArrayList<>();
+        // open the arriving animals file
+        String file = "c://Animals//arrivingAnimals.txt";
 
-        for (int i = 1; i <= 5; i++){
-            Cat cat  = new Cat("Cat" + i+1);
-            catList.add(cat);
+
+
+        ArrayList<animals> animalList = new ArrayList<>();
+
+                try {
+                    FileReader fileReader = new FileReader("c://Animals//arrivingAnimals.txt");
+                    BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+                    String line;
+                    //create an array list
+
+
+                    while ((line = bufferedReader.readLine()) != null) {
+                        //System.out.println(line); // Print each line from the file
+                        //split the line into 6 substring
+                        String[] myArray = line.split(",");
+                        //System.out.println("\n my Array [0] is " + myArray[0]);
+                        //System.out.println("\n my Array [1] is " + myArray[1]);
+
+                        // create an animal object
+                        animals anyAnimal = new animals();
+                        // Increment the static animal count
+
+
+                        // fill the object's data fields
+                        anyAnimal.desc = myArray[0];
+                        anyAnimal.brithSeason = myArray[1];
+                        anyAnimal.color = myArray[2];
+                        anyAnimal.weight = myArray[3];
+                        anyAnimal.origin01 = myArray[4];
+                        anyAnimal.origin02 = myArray[5];
+
+                        // add the newly created animal object to the array list
+                        animalList.add(anyAnimal);
+
+                    }
+
+                    bufferedReader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                // done with the txt file
+                // output the arrayList
+        for (animals animals: animalList) {
+            System.out.println(animals.desc);
+            System.out.println(animals.brithSeason);
+            System.out.println(animals.color);
+            System.out.println(animals.weight);
+            System.out.println(animals.origin01);
+            System.out.println(animals.origin02);
+            System.out.println("\n");
         }
+
+
+
+
 
 
     }
