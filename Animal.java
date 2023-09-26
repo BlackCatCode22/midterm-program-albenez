@@ -1,26 +1,11 @@
 public class Animal {
-    public static int numAnimals = 0;
+    private static int numOfAnimal = 0;
 
-    // create a constructor
+    public int getNumOfAnimals() {
+        return numOfAnimal;
+    }
     public Animal() {
-        numAnimals++;
-
+        System.out.println("\n a new animal was created!");
+        numOfAnimal++;
     }
-    String desc;
-    String brithSeason;
-    String color;
-    String weight;
-    String origin01;
-    String origin02;
-String name;
-
-    public void makeNoise(){
-        System.out.println("aaa");
-    }
-
-
-    public String makeNoise02() {
-        return "rrrrrrrr";
-    }
-
 }
