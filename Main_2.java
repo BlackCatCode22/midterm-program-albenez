@@ -1,3 +1,9 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InterruptedIOException;
+
+
 public class Main_2 {
 
     // creating the genUniqueID method
@@ -14,7 +20,6 @@ public class Main_2 {
 
 
     }
-
 
     public static void main(String[] args) {
 
@@ -37,5 +42,47 @@ public class Main_2 {
 
 
         System.out.println(oneMore.theNewID);
+
+        Hyena.inputHyenaNames();
+
+        Hyena.listOut();
+
+        String myName = Hyena.popHyenaName();
+        myName = Hyena.popHyenaName();
+        myName = Hyena.popHyenaName();
+        System.out.println("the pop Hyena name is:" + myName);
+
+        // do the same for each animal by coping and paste the java file Hyena.java
+        // and renaming the file to animal names and input a arrayList code from github
+        //
+        String file = "C:\\Animals\\arrivingAnimals.txt";
+        String myFileLine = "";
+        try {
+           BufferedReader reader = new BufferedReader(new FileReader(file));
+            while ((myFileLine = reader.readLine()) != null) {
+                String[] myArray = myFileLine.split(",");
+
+                String myStr = myArray[0];
+                System.out.println("myStr = " + myStr);
+                myArray = myStr.split(" ");
+                String
+
+
+
+
+
+
+
+
+
+
+
+            }
+
+
+
+
     }
+
+
 }
